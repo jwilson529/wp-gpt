@@ -20,7 +20,8 @@
                 data: {
                     action: 'chatgpt_submit',
                     user_input: user_input,
-                    conversation_id: conversationId
+                    conversation_id: conversationId,
+                    chatgpt_nonce: chatgpt.nonce
                 },
                 success: function(response) {
                     console.log('AJAX response:', response);
@@ -96,5 +97,4 @@
             document.getElementById('chatgpt_model').addEventListener('change', updateMaxTokensLimit);
         }
     });
-    
 })(jQuery);
