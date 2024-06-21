@@ -147,11 +147,10 @@ class Wp_Gpt {
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
-
 		$plugin_admin = new Wp_Gpt_Admin( $this->get_plugin_name(), $this->get_version() );
-
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'init', $plugin_admin, 'register_conversation_cpt' );
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'create_settings_page' );
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'setup_settings' );
 	}
 
 	/**
@@ -162,11 +161,13 @@ class Wp_Gpt {
 	 * @access   private
 	 */
 	private function define_public_hooks() {
-
 		$plugin_public = new Wp_Gpt_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		$this->loader->add_action( 'init', $plugin_public, 'register_shortcodes' );
+		$this->loader->add_action( 'wp_ajax_chatgpt_submit', $plugin_public, 'handle_chatgpt_submit' );
+		$this->loader->add_action( 'wp_ajax_nopriv_chatgpt_submit', $plugin_public, 'handle_chatgpt_submit' );
 	}
 
 	/**

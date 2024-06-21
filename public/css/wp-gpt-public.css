@@ -1,4 +1,67 @@
-/**
- * All of the CSS for your public-facing functionality should be
- * included in this file.
- */
+#chatgpt-chatbox {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#chatgpt-response {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+#chatgpt-form {
+    display: flex;
+}
+
+#chatgpt-form textarea {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    resize: none; /* Disable resizing */
+    height: 50px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+#chatgpt-form button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-left: none;
+    background-color: #0073aa;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+#chatgpt-form button:hover {
+    background-color: #005f8a;
+}
+
+.chat-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.user-message {
+    background-color: #f1f1f1;
+    text-align: right;
+}
+
+.bot-message {
+    background-color: #e2e2ff;
+}
+
+.loading {
+    font-style: italic;
+    color: #999;
+}
+
+.error-message {
+    color: red;
+}
