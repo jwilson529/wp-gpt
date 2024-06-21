@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The file that defines the core plugin class
  *
@@ -78,7 +77,6 @@ class Wp_Gpt {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-
 	}
 
 	/**
@@ -87,7 +85,7 @@ class Wp_Gpt {
 	 * Include the following files that make up the plugin:
 	 *
 	 * - Wp_Gpt_Loader. Orchestrates the hooks of the plugin.
-	 * - Wp_Gpt_i18n. Defines internationalization functionality.
+	 * - Wp_Gpt_I18n. Defines internationalization functionality.
 	 * - Wp_Gpt_Admin. Defines all hooks for the admin area.
 	 * - Wp_Gpt_Public. Defines all hooks for the public side of the site.
 	 *
@@ -103,33 +101,32 @@ class Wp_Gpt {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-gpt-loader.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-wp-gpt-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-gpt-i18n.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-wp-gpt-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-gpt-admin.php';
+		require_once plugin_dir_path( __DIR__ ) . 'admin/class-wp-gpt-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-gpt-public.php';
+		require_once plugin_dir_path( __DIR__ ) . 'public/class-wp-gpt-public.php';
 
 		$this->loader = new Wp_Gpt_Loader();
-
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Wp_Gpt_i18n class in order to set the domain and to register the hook
+	 * Uses the Wp_Gpt_I18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -137,10 +134,9 @@ class Wp_Gpt {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Wp_Gpt_i18n();
+		$plugin_i18n = new Wp_Gpt_I18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
 	}
 
 	/**
@@ -156,7 +152,6 @@ class Wp_Gpt {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-
 	}
 
 	/**
@@ -172,7 +167,6 @@ class Wp_Gpt {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
 	}
 
 	/**
@@ -214,5 +208,4 @@ class Wp_Gpt {
 	public function get_version() {
 		return $this->version;
 	}
-
 }

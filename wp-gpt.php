@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The plugin bootstrap file
  *
@@ -77,6 +76,5 @@ function run_wp_gpt() {
 
 	$plugin = new Wp_Gpt();
 	$plugin->run();
-
 }
 run_wp_gpt();

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Define the internationalization functionality
  *
@@ -24,7 +23,7 @@
  * @subpackage Wp_Gpt/includes
  * @author     James Wilson <info@oneclickcontent.com>
  */
-class Wp_Gpt_i18n {
+class Wp_Gpt_I18n {
 
 
 	/**
@@ -39,9 +38,5 @@ class Wp_Gpt_i18n {
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
-
 	}
-
-
-
 }
