@@ -1,114 +1,64 @@
-=== Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
-Donate link: https://oneclickcontent.com/
-Tags: comments, spam
-Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 4.3
+=== WP GPT ===
+Contributors: jameswilson, oneclickcontent
+Donate link: https://oneclickcontent.com/donate
+Tags: chatgpt, openai, chatbot, AI, conversation, WordPress
+Requires at least: 5.0
+Tested up to: 6.2
+Stable tag: 1.0.0
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+A WordPress plugin to integrate OpenAI's ChatGPT with your website, allowing users to interact with an AI chatbot.
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+WP GPT is a powerful and easy-to-use WordPress plugin that allows you to integrate OpenAI's ChatGPT into your website. Users can interact with the AI chatbot by typing their questions, and the chatbot will respond with relevant answers. The plugin saves all conversations, making it easy to track and analyze user interactions.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
-
-A few notes about the sections above:
-
-*   "Contributors" is a comma separated list of wp.org/wp-plugins.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
-
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
-
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
+= Features =
+* Easy integration with OpenAI's ChatGPT.
+* Customizable settings for API key, model selection, temperature, and max tokens.
+* Save and update user conversations.
+* Shortcode to display the chatbot form anywhere on your site.
+* Responsive design for a seamless user experience.
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-e.g.
-
-1. Upload `wp-gpt.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
+1. Upload the `wp-gpt` folder to the `/wp-content/plugins/` directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. Go to 'Settings' > 'WP GPT Settings' to configure your OpenAI API key and other settings.
+4. Use the `[wp_gpt]` shortcode to display the chatbot form on any page or post.
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= How do I get an OpenAI API key? =
+You can get an OpenAI API key by signing up at [OpenAI's website](https://platform.openai.com/signup).
 
-An answer to that question.
+= Can I customize the chatbot's behavior? =
+Yes, you can customize the model, temperature, and max tokens from the plugin settings.
 
-= What about foo bar? =
-
-Answer to foo bar dilemma.
+= Where are the conversations stored? =
+Conversations are stored as custom posts under the 'Conversations' post type in your WordPress admin.
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Settings page.
+   ![Settings page](assets/screenshot-1.png)
+2. Chatbot form.
+   ![Chatbot form](assets/screenshot-2.png)
+3. Conversation history.
+   ![Conversation history](assets/screenshot-3.png)
 
 == Changelog ==
 
-= 1.0 =
-* A change since the previous version.
-* Another change.
-
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
+= 1.0.0 =
+* Initial release.
 
 == Upgrade Notice ==
 
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
+= 1.0.0 =
+Initial release of WP GPT.
 
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
+== License ==
 
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
-
-== A brief Markdown Example ==
-
-Ordered list:
-
-1. Some feature
-1. Another feature
-1. Something else about the plugin
-
-Unordered list:
-
-* something
-* something else
-* third thing
-
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
-
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
+This plugin is licensed under the GPLv2 or later. For more information, see [http://www.gnu.org/licenses/gpl-2.0.html](http://www.gnu.org/licenses/gpl-2.0.html).
